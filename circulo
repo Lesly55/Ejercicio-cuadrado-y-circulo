@@ -1,0 +1,25 @@
+//radio ID modficable
+//circunferencia
+//area
+
+public class circulo {
+	public int radio = 177953;
+	public int newRadio;
+	
+	
+	public int cambiarRadio(int newRadio) {
+		radio = newRadio;
+		return radio;
+		
+	}
+	
+	public double calcularCircunferencia() {
+		return 2 * Math.PI * radio;
+	}
+	
+	public double calcularAreaCirculo() {
+		return (Math.PI * Math.pow(radio, 2));
+		
+	}
+
+}
