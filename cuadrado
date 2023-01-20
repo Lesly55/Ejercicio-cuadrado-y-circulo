@@ -1,9 +1,13 @@
 //longitud de ID modificable ej: c.cambiarLongitud(500);
 
 public class cuadrado {
-	public int lado = 177953;
+	public int lado;
 	public double area;
 	public int ladoNuevo;
+	
+	public cuadrado() {
+		lado = 177953;
+	}
 
 	
 	public int cambiarLongitud(int ladoNuevo) {
