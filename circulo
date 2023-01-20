@@ -3,9 +3,12 @@
 //area
 
 public class circulo {
-	public int radio = 177953;
+	public int radio;
 	public int newRadio;
 	
+	public circulo() {
+		radio = 177953;
+	}
 	
 	public int cambiarRadio(int newRadio) {
 		radio = newRadio;
@@ -23,3 +26,4 @@ public class circulo {
 	}
 
 }
+
