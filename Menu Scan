@@ -1,0 +1,71 @@
+
+import java.util.Scanner;
+
+public class Programa {
+	
+	public static void main(String[] args) {
+		
+		String figura, operacionCuadrado, operacionCirculo;
+		int ladoNuevo, radioNuevo;
+
+		Scanner input = new Scanner(System.in);
+		Scanner input1 = new Scanner(System.in);
+		Scanner input2 = new Scanner(System.in);
+		
+		System.out.println("¿Que figura desea hacer? ");
+		figura = input.nextLine();
+		figura = figura.toLowerCase();
+
+		
+		//condicion para calculos de un cuadrado
+		if(figura.equals("cuadrado")) {
+			
+			System.out.println("¿De que medida es el lado del cuadrado? ");
+			ladoNuevo = input.nextInt();
+			cuadrado c = new cuadrado(ladoNuevo);
+
+			
+			System.out.println("Ingrese el resultado que desea encontrar. Perimetro, area o diagonal");
+			operacionCuadrado = input1.nextLine();
+			operacionCuadrado = operacionCuadrado.toLowerCase();
+			
+			//calculos de perimeto, area o diagonal
+			if(operacionCuadrado.equals("perimetro")) {
+				System.out.println("El perimetro de su cuadrado, con lado " + ladoNuevo + ", es: " + c.calcularPerimetro());
+			}
+			if(operacionCuadrado.equals("area")) {
+				System.out.println("El area de su cuadrado, con lado " + ladoNuevo + ", es: " + c.calcularAreaCuadrado());
+				
+			}
+			if(operacionCuadrado.equals("diagonal")) {
+				System.out.println("El diagonal de su cuadrado, con lado " + ladoNuevo + ", es: " + c.calcularDiagonal());
+				
+			}
+		}
+		
+		//condicion para calculos de circulo
+		if(figura.equals("circulo")) {
+			System.out.println("¿De que medidia es el radio?");
+			radioNuevo = input.nextInt();
+			circulo ci = new circulo(radioNuevo);
+			
+			System.out.println("¿Desea calcular la circunferencia o el area de su circulo? ");
+			operacionCirculo = input2.nextLine();
+			operacionCirculo = operacionCirculo.toLowerCase();
+			
+			//calculos de circunferencia o area
+			if(operacionCirculo.equals("circunferencia")) {
+				
+				System.out.println("La circunferencia de su circulo, con radio " + radioNuevo + ", es: " + ci.calcularCircunferencia());
+				
+			}
+			if(operacionCirculo.equals("area")) {
+				System.out.println("El area de su circulo, con radio " + radioNuevo + ", es: " + ci.calcularAreaCirculo());
+			}
+			
+		}
+		
+		
+	}
+
+}
