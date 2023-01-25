@@ -1,17 +1,22 @@
-//longitud de ID modificable ej: c.cambiarLongitud(500);
-
-public class cuadrado {
+public class Cuadrado {
 	public int lado;
 	public double area;
 	public int ladoNuevo;
 	
-	public cuadrado() {
+	public Cuadrado() {
 		this(177953);
 	}
 	
-	public cuadrado(int lado) {
+	public Cuadrado(int lado) {
 		this.lado = lado;
 	}
+
+	/*
+	public int cambiarLongitud(int ladoNuevo) {
+		lado = ladoNuevo;
+		return lado;
+	}
+	*/
 	
 	public int calcularPerimetro() {
 		return lado * 4;
