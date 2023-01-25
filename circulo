@@ -2,11 +2,11 @@
 //circunferencia
 //area
 
-public class circulo {
+public class Circulo {
 	public int radio;
 	public int newRadio;
 	
-	public circulo() {
+	public Circulo() {
 		radio = 177953;
 	}
 	
