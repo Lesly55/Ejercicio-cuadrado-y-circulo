@@ -6,20 +6,22 @@ public class Programa {
 	public static void main(String[] args) {
 		
 		String figura, operacionCuadrado, operacionCirculo, a, b;
-		int ladoNuevo, radioNuevo;
+		int radioNuevo,ladoNuevo;
+		Cuadrado c;
+		Circulo ci;
 
 		Scanner input = new Scanner(System.in);
 		
 		System.out.println("¿Que figura desea hacer? ");
 		figura = (input.nextLine()).toLowerCase();
-
+		
 		//condicion para calculos de un cuadrado
 		if(figura.equals("cuadrado")) {
 			
 			System.out.println("¿De que medida es el lado del cuadrado? ");
 			a = input.nextLine();
 			ladoNuevo = Integer.parseInt(a);
-			cuadrado c = new cuadrado(ladoNuevo);
+			c = new Cuadrado(ladoNuevo);
 
 			
 			System.out.println("Ingrese el resultado que desea encontrar. Perimetro, area o diagonal");
@@ -44,24 +46,20 @@ public class Programa {
 			System.out.println("¿De que medidia es el radio?");
 			b = input.nextLine();
 			radioNuevo = Integer.parseInt(b);
-			circulo ci = new circulo(radioNuevo);
+			ci = new Circulo(radioNuevo);
 			
 			System.out.println("¿Desea calcular la circunferencia o el area de su circulo? ");
 			operacionCirculo = (input.nextLine()).toLowerCase();
 			
 			//calculos de circunferencia o area
 			if(operacionCirculo.equals("circunferencia")) {
-				
 				System.out.println("La circunferencia de su circulo, con radio " + radioNuevo + ", es: " + ci.calcularCircunferencia());
 				
 			}
 			if(operacionCirculo.equals("area")) {
 				System.out.println("El area de su circulo, con radio " + radioNuevo + ", es: " + ci.calcularAreaCirculo());
-			}
-			
+				
+			}	
 		}
-		
-		
 	}
-
 }
