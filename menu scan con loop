@@ -1,0 +1,91 @@
+
+import java.util.Scanner;
+public class Programa {
+	
+	public static void main(String[] args) {
+		
+		String figura, operacionCuadrado, operacionCirculo, a, b, menu;
+		int radioNuevo,ladoNuevo;
+		Cuadrado c;
+		Circulo ci;
+
+		Scanner input = new Scanner(System.in);
+		boolean useMenu = false;
+		
+		System.out.println("Desea usar el menu?");
+		menu = (input.nextLine()).toLowerCase();
+		
+		while(menu.equalsIgnoreCase("si")) {
+
+			System.out.println("\n¿Que figura desea hacer? ");
+			figura = (input.nextLine()).toLowerCase();
+			
+			switch(figura){
+			
+			case "cuadrado" :
+				System.out.println("\n¿De que medida es el lado del cuadrado? ");
+				a = input.nextLine();
+				ladoNuevo = Integer.parseInt(a);
+				c = new Cuadrado(ladoNuevo);
+				
+				System.out.println("\nIngrese el resultado que desea encontrar. Perimetro, area o diagonal");
+				operacionCuadrado = (input.nextLine()).toLowerCase();
+				
+				switch(operacionCuadrado) {
+				case "perimetro" :
+					System.out.println("El perimetro de su cuadrado, con lado " + ladoNuevo + ", es: " + c.calcularPerimetro());
+				break;
+				
+				case "area" :
+					System.out.println("El area de su cuadrado, con lado " + ladoNuevo + ", es: " + c.calcularAreaCuadrado());
+					break;
+					
+				case "diagonal":
+					System.out.println("El diagonal de su cuadrado, con lado " + ladoNuevo + ", es: " + c.calcularDiagonal());
+					break;
+					
+				default:
+					System.out.println("Opcion invalida.");
+					break;
+					
+					}
+				break; 
+				
+				case "circulo" :
+					System.out.println("\n¿De que medidia es el radio?");
+					b = input.nextLine();
+					radioNuevo = Integer.parseInt(b);
+					ci = new Circulo(radioNuevo);
+					
+					System.out.println("\n¿Desea calcular la circunferencia o el area de su circulo? ");
+					operacionCirculo = (input.nextLine()).toLowerCase();
+					
+					switch(operacionCirculo) {
+					
+					case "circunferencia":
+						System.out.println("La circunferencia de su circulo, con radio " + radioNuevo + ", es: " + ci.calcularCircunferencia());
+						break;
+						
+					case "area":
+						System.out.println("El area de su circulo, con radio " + radioNuevo + ", es: " + ci.calcularAreaCirculo());
+						break;
+						
+					default:
+						System.out.println("Opcion invalida.");
+						break;
+					}
+					break;
+					
+					default:
+						System.out.println("Opcion invalida");
+						break;
+			}
+			
+			System.out.println("\nDesea usar el menu?");
+			menu = (input.nextLine()).toLowerCase();
+			
+			
+		}
+		
+	}
+}
